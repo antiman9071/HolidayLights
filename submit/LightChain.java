@@ -4,13 +4,12 @@ import itsc2214.Node;
  * the holidays. Each chain contains initially 5
  * but you can remove some or change some by
  * colors.
- * 
+ *
  * @author jbroo129@charlotte.edu
  * @author blacroi2@charlotte.edu
  * @author rlacroix@charlotte.edu
  * @author adibern2@charlotte.edu
  * @author ahooker9@charlotte.edu
-
  */
 
 class LightChain {
@@ -53,9 +52,11 @@ class LightChain {
      * initializing the instance variable, headOfLightString
      */
     public LightChain() {
-        // TODO Create a linked list of holiday lights as a chain of lights, 
-        //     using the following colors: Red, Green, Blue, Yellow, and White. 
-
+        Node<String> white = new Node<String>(WHITE);
+        Node<String> yellow = new Node<String>(YELLOW,white);
+        Node<String> blue = new Node<String>(BLUE,yellow);
+        Node<String> green = new Node<String>(GREEN,blue);
+        headOfLightString = new Node<String>(RED,green);
     }
 
     /**
@@ -130,21 +131,46 @@ class LightChain {
 
     /**
      * Remove the given color.
+     * First Case: will set head to the next node
+     * Second Case: connects previous node to child node of the current.
      * @param aColor the to-be-removed color
      */
     public void remove(String aColor) {
-        //TODO Remove the a color from the chain.
+        if (headOfLightString.getData().equals(aColor))
+        {
+            headOfLightString = headOfLightString.getNext();
+        }
+        else
+        {
+            Node<String> previous = headOfLightString;
+            Node<String> current = previous.getNext();
+            while(current != null) 
+            {
+                if (current.getData().equals(aColor))
+                {
+                    Node<String> temp = current.getNext();
+                    previous.setNext(temp);
+                    break;
+                }
 
+                previous = current;
+                current = current.getNext();
+            }
+        }
     }
     
     /**
-     * Replace all of the colors aColor with the given anotherColor.
+     * Replaces all colors acolor with anotherColor.
      * @param aColor the color to be replaced.
      * @param anotherColor the color that will replace it.
      */
-    public void replaceAll(String aColor, String anotherColor) {
-        //TODO Replace all lightbulbs of a color light with another light.
-
+    public void replaceAll(String aColor, String anotherColor) {        
+        Node<String> current = headOfLightString;
+        while (current != null) {
+            if (current.getData().equals(aColor)) {
+                current.setData(anotherColor);
+            }
+        }
     }
 
 }
