@@ -164,13 +164,18 @@ class LightChain {
      * @param aColor the color to be replaced.
      * @param anotherColor the color that will replace it.
      */
-    public void replaceAll(String aColor, String anotherColor) {        
+    public void replaceAll(String aColor, String anotherColor) {
+        //TODO Replace all lightbulbs of a color light with another light.
+        //I think this has been completed check and make sure it looks right
+        
         Node<String> current = headOfLightString;
-        while (current != null) {
-            if (current.getData().equals(aColor)) {
+        while(current.getNext() != null){
+            if(current.getData().equals(aColor)){
                 current.setData(anotherColor);
-            }
+            } 
+            current = current.getNext();
         }
+        
     }
 
 }
