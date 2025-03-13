@@ -126,7 +126,7 @@ class LightChain {
         if (found == null) return;
  
         Node<String> next = found.getNext();
-        current.setNext(new Node<String>(afterColor, next));
+        found.setNext(new Node<String>(newColor, next));
     }
 
     /**
@@ -172,7 +172,7 @@ class LightChain {
         while(current.getNext() != null){
             if(current.getData().equals(aColor)){
                 current.setData(anotherColor);
-            } 
+            }
             current = current.getNext();
         }
         
