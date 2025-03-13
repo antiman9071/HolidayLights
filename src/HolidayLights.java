@@ -108,7 +108,7 @@ class LightChain {
         Node<String> current = headOfLightString;
         while(current.getNext() != null){
             System.out.println(current.getData());
-            
+            current = current.getNext();
         }
     }
 
