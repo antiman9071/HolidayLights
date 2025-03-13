@@ -4,12 +4,13 @@ import itsc2214.Node;
  * the holidays. Each chain contains initially 5
  * but you can remove some or change some by
  * colors.
- *
- * TODO Change your EMAIL below
- * @author  mperez@charlotte.edu
- * TODO Add your team members' emails for group submissoin
- * @author mspitz1@charlotte.edu
- * @author wowen3@charlotte.edu
+ * 
+ * @author jbroo129@charlotte.edu
+ * @author blacroi2@charlotte.edu
+ * @author rlacroix@charlotte.edu
+ * @author adibern2@charlotte.edu
+ * @author ahooker9@charlotte.edu
+
  */
 
 class LightChain {
@@ -98,9 +99,11 @@ class LightChain {
      * value for each.
      */
     public void traverseLightChain() {
-        // TODO Traverse the chain of lights and print out. 
-        //     the color of each light in order.
-
+        Node<String> current = headOfLightString;
+        while(current.getNext() != null){
+            System.out.println(current.getData());
+            current = current.getNext();
+        }
     }
 
     /**

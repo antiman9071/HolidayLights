@@ -56,11 +56,10 @@ class LightChain {
         //     using the following colors: Red, Green, Blue, Yellow, and White. 
         
         Node<String> red = new Node<String>(RED);
-        Node<String> green = new Node<String>(Green);
+        Node<String> green = new Node<String>(GREEN);
         Node<String> blue = new Node<String>(BLUE);
         Node<String> yellow = new Node<String>(YELLOW);
         Node<String> white = new Node<String>(WHITE);
-        red.setNext(green); = nring>S
 
     }
 
@@ -119,18 +118,9 @@ class LightChain {
      */
     public void insertAfter(String newColor, String afterColor) {
         Node<String> current = headOfLightString;
-        Node<String> found = null;
         while (current.getNext() != null) {
-            if (current.getData().equals(afterColor)) {
-                found = current;
-                break;
-            }
-            current = current.getNext();
+            
         }
-        if (found == null) return;
-
-        Node<String> next = found.getNext();
-        current.setNext(new Node<String>(afterColor, next));
     }
 
     /**
@@ -139,7 +129,6 @@ class LightChain {
      */
     public void remove(String aColor) {
         Node<String> current = headOfLightString;
-        while (current
     }
     
     /**
@@ -151,7 +140,7 @@ class LightChain {
     public void replaceAll(String aColor, String anotherColor) {
         //TODO Replace all lightbulbs of a color light with another light.
         
-        Node<S
+        Node<String> current = headOfLightString;
         
     }
 
