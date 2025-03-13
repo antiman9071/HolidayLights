@@ -134,10 +134,32 @@ class LightChain {
 
     /**
      * Remove the given color.
+     * First Case: will set head to the next node
+     * Second Case: connects previous node to child node of the current.
      * @param aColor the to-be-removed color
      */
     public void remove(String aColor) {
-        Node<String> current = headOfLightString;
+        if (headOfLightString.getData().equals(aColor))
+        {
+            headOfLightString = headOfLightString.getNext();
+        }
+        else
+        {
+            Node<String> previous = headOfLightString;
+            Node<String> current = previous.getNext();
+            while(current != null) 
+            {
+                if (current.getData().equals(aColor))
+                {
+                    Node<String> temp = current.getNext();
+                    previous.setNext(temp);
+                    break;
+                }
+
+                previous = current;
+                current = current.getNext();
+            }
+        }
     }
     
     /**
