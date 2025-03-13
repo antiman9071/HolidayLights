@@ -52,15 +52,14 @@ class LightChain {
      * initializing the instance variable, headOfLightString
      */
     public LightChain() {
-        // TODO Create a linked list of holiday lights as a chain of lights, 
-        //     using the following colors: Red, Green, Blue, Yellow, and White. 
-        
-        Node<String> red = new Node<String>(RED);
         Node<String> green = new Node<String>(GREEN);
         Node<String> blue = new Node<String>(BLUE);
         Node<String> yellow = new Node<String>(YELLOW);
         Node<String> white = new Node<String>(WHITE);
-
+        green.setNext(blue);
+        blue.setNext(yellow);
+        yellow.setNext(white);
+        headOfLightString = new Node<String>(RED,green);
     }
 
     /**
