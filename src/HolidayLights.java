@@ -117,9 +117,19 @@ class LightChain {
      */
     public void insertAfter(String newColor, String afterColor) {
         Node<String> current = headOfLightString;
+        Node<String> found = null;
         while (current.getNext() != null) {
-            
+             
+            if (current.getData().equals(afterColor)) {
+                found = current;
+                break;
+            }
+            current = current.getNext();
         }
+        if (found == null) return;
+ 
+        Node<String> next = found.getNext();
+        current.setNext(new Node<String>(afterColor, next));
     }
 
     /**
