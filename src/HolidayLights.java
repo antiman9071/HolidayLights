@@ -138,13 +138,11 @@ class LightChain {
      */
     public void remove(String aColor) {
         Node<String> current = headOfLightString;
-        //this is a change
     }
     
     /**
-     * Replace all of the c previous to thoe next
-                lors aColor with the given anotherColor.
-     * @param a//CLink thoelor the color to be replaced.
+     * Replaces all colors acolor with anotherColor.
+     * @param aColor the color to be replaced.
      * @param anotherColor the color that will replace it.
      */
     public void replaceAll(String aColor, String anotherColor) {
