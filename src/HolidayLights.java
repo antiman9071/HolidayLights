@@ -138,6 +138,7 @@ class LightChain {
      */
     public void remove(String aColor) {
         Node<String> current = headOfLightString;
+        //this is a change
     }
     
     /**
