@@ -52,13 +52,10 @@ class LightChain {
      * initializing the instance variable, headOfLightString
      */
     public LightChain() {
-        Node<String> green = new Node<String>(GREEN);
-        Node<String> blue = new Node<String>(BLUE);
-        Node<String> yellow = new Node<String>(YELLOW);
         Node<String> white = new Node<String>(WHITE);
-        green.setNext(blue);
-        blue.setNext(yellow);
-        yellow.setNext(white);
+        Node<String> yellow = new Node<String>(YELLOW,white);
+        Node<String> blue = new Node<String>(BLUE,yellow);
+        Node<String> green = new Node<String>(GREEN,blue);
         headOfLightString = new Node<String>(RED,green);
     }
 
