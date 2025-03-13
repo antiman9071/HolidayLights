@@ -112,8 +112,20 @@ class LightChain {
      * @param afterColor insert it after this color
      */
     public void insertAfter(String newColor, String afterColor) {
-        // TODO Add a new light (newColor) after lights. 
-
+        Node<String> current = headOfLightString;
+        Node<String> found = null;
+        while (current.getNext() != null) {
+             
+            if (current.getData().equals(afterColor)) {
+                found = current;
+                break;
+            }
+            current = current.getNext();
+        }
+        if (found == null) return;
+ 
+        Node<String> next = found.getNext();
+        current.setNext(new Node<String>(afterColor, next));
     }
 
     /**
